@@ -18,26 +18,14 @@
 	</properties>
 
 	<profiles>
-		<!-- Test Profile -->
 		<profile>
 			<id>test</id>
-			<dependencies>
-				<!-- Add test-specific dependencies here -->
-				<!-- For example, you can include the H2 database for testing -->
-				<dependency>
-					<groupId>com.h2database</groupId>
-					<artifactId>h2</artifactId>
-					<scope>test</scope>
-				</dependency>
-			</dependencies>
-			<!-- Plugin configurations for testing -->
 			<build>
 				<plugins>
-					<!-- For example, you can configure the Surefire plugin for running tests -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-surefire-plugin</artifactId>
-						<version>3.0.0-M5</version> <!-- Use the appropriate version -->
+						<version>3.0.0-M5</version>
 						<configuration>
 							<skipTests>false</skipTests>
 						</configuration>
@@ -45,7 +33,6 @@
 				</plugins>
 			</build>
 		</profile>
-
 		<profile>
 			<id>prod</id>
 			<build>

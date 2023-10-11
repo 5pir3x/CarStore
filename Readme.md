@@ -14,7 +14,7 @@ Run the command in your project root:
 
 Run the command in your project root: 
 
-- docker-compose up.
+- docker-compose up
 
 (Make sure your port 5432 is free since it will try to use it for the postgres DB.
 Stop any PostgreSQL service from task manager if it's running to make sure)

@@ -1,0 +1,39 @@
+ type CarDTO {
+  carId: ID!
+  userId: Int
+  ownerId: Int
+  name: String!
+  category: String!
+  brand: String!
+  description: String!
+  price: Int!
+  mfcDate: String!
+  soldDate: String
+}
+
+type UserDTO {
+  firstName: String!
+  lastName: String!
+  email: String!
+  budget: Float!
+  userType: String!
+  ownedCars: [CarDTO]
+}
+
+type Query {
+  listCars: [CarDTO]
+  listAllCarsSold: [CarDTO]
+  listUsers: [UserDTO]
+}
+type Mutation {
+  createCar(userId: Int!, name: String!, category: String!, brand: String!, description: String!, mfcDate: String!): CarDTO!
+  buyCar(userId: Int!, carId: Int!): CarDTO!
+  createUser(firstName: String!, lastName: String!, email: String!, budget: Float!, userType: String!): UserDTO!
+}
+
+
+
+
+
+
+

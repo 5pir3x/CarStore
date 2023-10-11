@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  # Spring Boot Application Service
+  spring-app:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Specify the path to your Dockerfile
+    ports:
+      - "8080:8080"  # Map the Spring Boot app's port to host
+    depends_on:
+      - postgres-db
+
+  # PostgreSQL Database Service
+  postgres-db:
+    image: postgres:16  # Use the PostgreSQL 16 image
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"  # Map the PostgreSQL port to host

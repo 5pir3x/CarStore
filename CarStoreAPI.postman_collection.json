@@ -1,0 +1,341 @@
+{
+	"info": {
+		"_postman_id": "c8bf28f1-9430-44e7-ae79-cee8883b143e",
+		"name": "CarStoreAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21713400"
+	},
+	"item": [
+		{
+			"name": "create-car",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 3,\r\n    \"name\": \"Test3\",\r\n    \"category\": \"sedane\",\r\n    \"brand\": \"toyota\",\r\n    \"description\": \"3 testing car creation with calculated price\",\r\n    \"mfcDate\": \"2022-10-09\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/create-car",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"create-car"
+					]
+				},
+				"description": "create-car(UserId, Name, Category, Brand, Description, Manufacturing date) - to  \ncreate a new car (UserId is the id of the Admin User that is performing the action)"
+			},
+			"response": []
+		},
+		{
+			"name": "create-cars",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"userId\": 3,\r\n        \"name\": \"car1\",\r\n        \"category\": \"sedane\",\r\n        \"brand\": \"toyota\",\r\n        \"description\": \"testing car 1 creation with calculated price\",\r\n        \"mfcDate\": \"2015-02-26\"\r\n    },\r\n        {\r\n        \"userId\": 3,\r\n        \"name\": \"car2\",\r\n        \"category\": \"sedane\",\r\n        \"brand\": \"toyota\",\r\n        \"description\": \"testing car 2 batch creation with calculated price\",\r\n        \"mfcDate\": \"2017-02-26\"\r\n    },\r\n        {\r\n        \"userId\": 3,\r\n        \"name\": \"car3\",\r\n        \"category\": \"suv\",\r\n        \"brand\": \"toyota\",\r\n        \"description\": \"testing car 3 batch creation with calculated price\",\r\n        \"mfcDate\": \"2019-02-26\"\r\n    },\r\n        {\r\n        \"userId\": 3,\r\n        \"name\": \"car4\",\r\n        \"category\": \"suv\",\r\n        \"brand\": \"bmw\",\r\n        \"description\": \"testing car 4 batch creation with calculated price\",\r\n        \"mfcDate\": \"2023-02-26\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/create-cars",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"create-cars"
+					]
+				},
+				"description": "add commans to create cars in batch"
+			},
+			"response": []
+		},
+		{
+			"name": "create-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Spiro\",\r\n    \"lastName\": \"Buzharovski\",\r\n    \"email\": \"spirobuzarovski@yahoo.com\",\r\n    \"budget\": 12000.00,\r\n    \"userType\": \"USER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/create-user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"create-user"
+					]
+				},
+				"description": "create-user(First name, Last name, Email address, Budget, Type) - to create a new user"
+			},
+			"response": []
+		},
+		{
+			"name": "create-users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"firstName\": \"List1\",\r\n        \"lastName\": \"Buzharovski\",\r\n        \"email\": \"spirobuzarovski1@yahoo.com\",\r\n        \"budget\": 1200000.00,\r\n        \"userType\": \"USER\"\r\n    },\r\n        {\r\n        \"firstName\": \"List2\",\r\n        \"lastName\": \"Buzharovski\",\r\n        \"email\": \"spirobuzarovski2@yahoo.com\",\r\n        \"budget\": 1200000.00,\r\n        \"userType\": \"USER\"\r\n    },\r\n        {\r\n        \"firstName\": \"List3\",\r\n        \"lastName\": \"Buzharovski\",\r\n        \"email\": \"spirobuzarovski3@yahoo.com\",\r\n        \"budget\": 1203500.00,\r\n        \"userType\": \"ADMIN\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/create-users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"create-users"
+					]
+				},
+				"description": "add command to create users in batch"
+			},
+			"response": []
+		},
+		{
+			"name": "buy car",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/buy?userId=1&carId=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"buy"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						},
+						{
+							"key": "carId",
+							"value": "2"
+						}
+					]
+				},
+				"description": "buy(UserId, CarId) - with this command UserId, should buy the CarId"
+			},
+			"response": []
+		},
+		{
+			"name": "list-cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/list-cars",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"list-cars"
+					]
+				},
+				"description": "list-cars - to display the data for all cars in the store"
+			},
+			"response": []
+		},
+		{
+			"name": "list-users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/list-users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"list-users"
+					]
+				},
+				"description": "list-users - to display the data for all users in the store"
+			},
+			"response": []
+		},
+		{
+			"name": "history-log",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/history-log",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"history-log"
+					]
+				},
+				"description": "History-log - this command should list the history of all car owners for all cars"
+			},
+			"response": []
+		},
+		{
+			"name": "graphql - listCars",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  listCars {\r\n    carId\r\n    userId\r\n    ownerId\r\n    name\r\n    category\r\n    brand\r\n    description\r\n    price\r\n    mfcDate\r\n    soldDate\r\n  }\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "graphql - listUsers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  listUsers {\r\n    firstName\r\n    lastName\r\n    email\r\n    budget\r\n    userType\r\n    ownedCars {\r\n      carId\r\n      name\r\n      category\r\n      brand\r\n      description\r\n      price\r\n      mfcDate\r\n      soldDate\r\n    }\r\n  }\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "graphql - createCar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n  createCar(\r\n    userId: 3,      \r\n    name: \"My Car\",   \r\n    category: \"SUV\",  \r\n    brand: \"BMW\",    \r\n    description: \"A great car\",\r\n    mfcDate: \"2022-09-30\" \r\n  ) {\r\n    carId\r\n    userId\r\n    ownerId\r\n    name\r\n    category\r\n    brand\r\n    description\r\n    price\r\n    mfcDate\r\n    soldDate\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "graphql - createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n  createUser(\r\n    firstName: \"John2\"\r\n    lastName: \"Doe2\"\r\n    email: \"johndoe@example2.com\"\r\n    budget: 100560.0\r\n    userType: \"user\"\r\n  ) {\r\n    firstName\r\n    lastName\r\n    email\r\n    budget\r\n    userType\r\n  }\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "graphql - buyCar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n  buyCar(\r\n    userId: 2,      \r\n    carId: 3\r\n  ) {\r\n    carId\r\n    ownerId\r\n    name\r\n    category\r\n    brand\r\n    description\r\n    price\r\n    mfcDate\r\n    soldDate\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
